@@ -32,7 +32,8 @@ namespace MauiAppMinhasCompras
                     _db = new SQLiteDatabaseHelper(path);
                 }
 
-                //comos
+                //Fecha o if e retorna a instância (nova na primeira vez,
+                //reaproveitada nas próximas).
                 return _db;
             }
         }
