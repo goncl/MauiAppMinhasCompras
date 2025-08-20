@@ -7,14 +7,17 @@ public partial class ListaProduto : ContentPage
 		InitializeComponent();
 	}
 
+    //quando o usuário clicar no botão de Adicionar.
     private void ToolbarItem_Clicked(object sender, EventArgs e)
     {
         try
 		{
-			Navigation.PushAsync(new Views.NovoProduto());
+             //ele será levado para a tela de cadastro de novo produto.
+            Navigation.PushAsync(new Views.NovoProduto());
 		} catch(Exception ex)
 		{
-			DisplayAlert("OPS!", ex.Message, "OK");
+            //Se qualquer erro acontecer dentro do try, mostra a mensagem de erro detalhada.
+            DisplayAlert("OPS!", ex.Message, "OK");
 		}
     }
 }
