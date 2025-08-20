@@ -12,7 +12,7 @@ public partial class ListaProduto : ContentPage
     {
         try
 		{
-             //ele será levado para a tela de cadastro de novo produto.
+             //O usuário será levado para a tela de cadastro de novo produto.
             Navigation.PushAsync(new Views.NovoProduto());
 		} catch(Exception ex)
 		{
