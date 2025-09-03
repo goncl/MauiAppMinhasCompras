@@ -24,6 +24,12 @@ public partial class NovoProduto : ContentPage
                 Preco = Convert.ToDouble(txt_preco.Text)
             };
 
+            if (p.Preco <= 0)
+            {
+                await DisplayAlert("Erro", "Por favor, digite um preço maior que zero.", "OK");
+                return;
+            }
+
             //Aqui ele insere o produto no banco de dados SQLite.
             //App.DB é a instância do banco que foi criado antes.
             //Insert(p) é um método assíncrono que grava o objeto Produto na tabela correspondente.
@@ -32,6 +38,8 @@ public partial class NovoProduto : ContentPage
 
             //Em caso de sucesso, Exibe uma mensagem na tela para o usuário.
             await DisplayAlert("Sucesso!", "Registro Inserido!", "OK");
+
+            await Navigation.PopAsync();
         }
         catch (Exception ex)
         {
