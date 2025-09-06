@@ -24,6 +24,19 @@ public partial class NovoProduto : ContentPage
                 Preco = Convert.ToDouble(txt_preco.Text)
             };
 
+            //Validação dos campos no botão salvar.
+            if (p.Descricao == null)
+            {
+                await DisplayAlert("Erro", "Por favor, preencha a descrição.", "OK");
+                return;
+            }
+
+            if (p.Quantidade <= 0)
+            {
+                await DisplayAlert("Erro", "Por favor, digite uma quantidade maior que zero.", "OK");
+                return;
+            }
+
             if (p.Preco <= 0)
             {
                 await DisplayAlert("Erro", "Por favor, digite um preço maior que zero.", "OK");
